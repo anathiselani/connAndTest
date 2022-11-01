@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20221027 14:02:52.557" rpa="false" schemaversion="3">
+<suite id="s1" name="DBTest" source="C:\Users\absel\khwezi\connAndTest\TestingSuites\DBTest.robot">
+<test id="s1-t1" name="Run Database Test" line="11">
+<kw name="Establish Connection To SqlExpress">
+<kw name="Set Variable" library="BuiltIn">
+<var>${DBHost_ConnectionString}</var>
+<arg>Driver='ODBC Driver 17 for SQL Server', Server='NUTEETUF\\SQLEXPRESS', Database='AdventureWorks2019', Trusted_Connection='yes'</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221027 14:02:57.015" level="INFO">${DBHost_ConnectionString} = Driver='ODBC Driver 17 for SQL Server', Server='NUTEETUF\SQLEXPRESS', Database='AdventureWorks2019', Trusted_Connection='yes'</msg>
+<status status="PASS" starttime="20221027 14:02:57.015" endtime="20221027 14:02:57.015"/>
+</kw>
+<kw name="Connect To Database Using Custom Params" library="DatabaseLibrary">
+<arg>pyodbc</arg>
+<arg>${DBHost_ConnectionString}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using the map string `db_custom_param_string`.</doc>
+<msg timestamp="20221027 14:02:57.035" level="INFO">Executing : Connect To Database Using Custom Params : pyodbc.connect(db_api_2.connect(Driver='ODBC Driver 17 for SQL Server', Server='NUTEETUF\SQLEXPRESS', Database='AdventureWorks2019', Trusted_Connection='yes')) </msg>
+<status status="PASS" starttime="20221027 14:02:57.015" endtime="20221027 14:02:57.779"/>
+</kw>
+<kw name="Log Many" library="BuiltIn">
+<arg>Connection Succesful</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20221027 14:02:57.780" level="INFO">Connection Succesful</msg>
+<status status="PASS" starttime="20221027 14:02:57.779" endtime="20221027 14:02:57.780"/>
+</kw>
+<status status="PASS" starttime="20221027 14:02:57.015" endtime="20221027 14:02:57.780"/>
+</kw>
+<status status="PASS" starttime="20221027 14:02:57.014" endtime="20221027 14:02:57.780"/>
+</test>
+<test id="s1-t2" name="Running-${testCaseName}-${description}" line="14">
+<kw>
+<var>${query}</var>
+<var>${expectedResults}</var>
+<msg timestamp="20221027 14:02:57.783" level="FAIL">Keyword name cannot be empty.</msg>
+<status status="FAIL" starttime="20221027 14:02:57.783" endtime="20221027 14:02:57.783"/>
+</kw>
+<status status="FAIL" starttime="20221027 14:02:57.782" endtime="20221027 14:02:57.784">Keyword name cannot be empty.</status>
+</test>
+<status status="FAIL" starttime="20221027 14:02:52.559" endtime="20221027 14:02:57.785"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="DBTest">DBTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20221027 14:02:57.000" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\Users\absel\khwezi\connAndTest\TestingSuites\DBTest.robot", line 0</msg>
+<msg timestamp="20221027 14:02:57.001" level="ERROR">In source file:
+  File "C:\Users\absel\khwezi\connAndTest\TestingScripts/TestingConnection.xlsx", line 0</msg>
+<msg timestamp="20221027 14:02:57.013" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: AttributeError: No "Test Template" keyword found for first test case.</msg>
+</errors>
+</robot>
